@@ -1,0 +1,26 @@
+primary color: #3B82F6
+secondary color: #8B5CF6
+Text color: #0F172A
+Background color: #E2EBF0
+
+dark Theme:
+primary color: #60A5FA
+secondary color: #A78BFA
+text color: #F1F5F9
+background color: #0B1220
+
+
+Complete design tokens
+Token	Light theme	Dark theme
+Primary	#3B82F6	#60A5FA
+Secondary	#8B5CF6	#A78BFA
+Background	#E2EBF0	#0B1220
+Surface / Cards	#FFFFFF	#111827
+Elevated surface	#F1F5F9	#1E293B
+Main text	#0F172A	#F1F5F9
+Secondary text	#475569	#CBD5E1
+Borders	#CBD5E1	#334155
+Success	#15803D	#4ADE80
+Warning	#B45309	#FBBF24
+Error	#B91C1C	#F87171
+Input background	#FFFFFF	#0F172A

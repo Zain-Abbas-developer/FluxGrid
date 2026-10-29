@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250" role="img" aria-labelledby="title">
+  <title id="title">FluxGrid Load logo</title>
+  <defs>
+    <linearGradient id="fluxGridGradient" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="30%" stop-color="#237CFF"/>
+      <stop offset="60%" stop-color="#5B4BEE"/>
+    </linearGradient>
+  </defs>
+
+  <path
+    fill="url(#fluxGridGradient)"
+    d="M29 84 151 33c5-2 9 1 9 6v31c0 6-3 9-8 11l-69 27c-9 4-15 10-15 20v84c0 6-4 9-10 6l-29-17c-5-3-7-7-7-13v-37c0-6 3-9 8-12l32-14c3-2 5-5 5-9 0-5-3-7-7-5l-31 16c-6 3-9 0-9-6V96c0-6 3-10 9-12Z"
+  />
+
+  <path
+    fill="url(#fluxGridGradient)"
+    d="m87 115 64-25c5-2 9 1 9 6v31c0 6-3 10-8 12l-64 26c-5 2-8-1-8-6v-32c0-6 2-10 7-12Z"
+  />
+</svg>
