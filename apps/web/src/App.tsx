@@ -1,9 +1,9 @@
 import React from 'react'
-
+import LandingPage from './pages/Public/Landing'
 const App = () => {
   return (
-    <div className="text-3xl font-semibold">
-      hello fluxGrid!
+    <div> 
+      <LandingPage />
     </div>
   )
 }
