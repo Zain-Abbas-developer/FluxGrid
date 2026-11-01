@@ -41,6 +41,8 @@ import {
   Zap,
 } from "lucide-react";
 
+import {useTheme} from '../../context/ThemeContext.tsx'
+
 /* -------------------------------------------------------------------------- */
 /*  Configuration                                                             */
 /* -------------------------------------------------------------------------- */
@@ -243,49 +245,7 @@ const SECONDARY_BUTTON =
 const CARD_BASE =
   "rounded-2xl border border-slate-300/70 bg-white shadow-sm transition-all duration-300 dark:border-slate-700 dark:bg-[#111827]";
 
-/* -------------------------------------------------------------------------- */
-/*  Theme hook                                                                */
-/* -------------------------------------------------------------------------- */
-
-function getInitialTheme(): Theme {
-  if (typeof window === "undefined") return "light";
-
-  try {
-    const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
-    if (stored === "light" || stored === "dark") return stored;
-  } catch {
-    /* localStorage can be unavailable (private mode) — fall through */
-  }
-
-  // Some embedded browsers do not expose matchMedia; default safely to light.
-  return typeof window.matchMedia === "function" &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-}
-
-function useTheme(): { theme: Theme; toggleTheme: () => void } {
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
-
-  useEffect(() => {
-    const root = document.documentElement;
-    root.classList.toggle("dark", theme === "dark");
-    root.style.colorScheme = theme;
-
-    try {
-      window.localStorage.setItem(THEME_STORAGE_KEY, theme);
-    } catch {
-      /* ignore write failures */
-    }
-  }, [theme]);
-
-  const toggleTheme = useCallback(() => {
-    setTheme((current) => (current === "dark" ? "light" : "dark"));
-  }, []);
-
-  return { theme, toggleTheme };
-}
-
+  
 /* -------------------------------------------------------------------------- */
 /*  Brand                                                                    */
 /* -------------------------------------------------------------------------- */
