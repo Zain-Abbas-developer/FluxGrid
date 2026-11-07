@@ -1,5 +1,5 @@
 import React from 'react'
-import LandingPage from './pages/Public/Landing'
+import LandingPage from './pages/Public/Features.tsx'
 const App = () => {
   return (
     <div> 
