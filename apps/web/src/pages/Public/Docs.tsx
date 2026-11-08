@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import type { ReactElement } from "react";
 
-import { useTheme } from "../../context/ThemeContext.tsx";
-import Navbar from "../../components/common/Navbar.tsx";
-import Footer from "../../components/common/Footer.tsx";
-
 // Sidebar Navigation Data
 const sidebarData = [
   {
@@ -31,13 +27,10 @@ const quickStartSteps = [
 ];
 
 export default function DocsPage(): ReactElement {
-  const { theme, toggleTheme } = useTheme();
   const [activeLink, setActiveLink] = useState("Quick Start"); // Default active link
 
   return (
     <div className="relative min-h-screen overflow-x-clip bg-[#E2EBF0] text-slate-900 antialiased selection:bg-blue-500/20 dark:bg-[#0B1220] dark:text-slate-100">
-      {/* Navbar */}
-      <Navbar theme={theme} onToggleTheme={toggleTheme} />
 
       <main className="mx-auto max-w-7xl px-6 py-12 sm:py-16">
         
@@ -195,8 +188,6 @@ export default function DocsPage(): ReactElement {
         </div>
       </main>
 
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }

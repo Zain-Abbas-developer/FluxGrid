@@ -2,9 +2,6 @@
 import React from "react";
 import type { ReactElement } from "react";
 
-import { useTheme } from "../../context/ThemeContext.tsx";
-import Navbar from "../../components/common/Navbar.tsx";
-import Footer from "../../components/common/Footer.tsx";
 
 interface Feature {
   number: string;
@@ -106,13 +103,10 @@ const colorStyles: Record<string, string> = {
 };
 
 export default function FeaturesPage(): ReactElement {
-  const { theme, toggleTheme } = useTheme();
+
 
   return (
     <div className="relative min-h-screen overflow-x-clip bg-[#E2EBF0] text-slate-900 antialiased selection:bg-blue-500/20 dark:bg-[#0B1220] dark:text-slate-100">
-
-      {/* Navbar */}
-      <Navbar theme={theme} onToggleTheme={toggleTheme} />
 
       <main>
         {/* Hero Section */}
@@ -259,9 +253,6 @@ export default function FeaturesPage(): ReactElement {
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }

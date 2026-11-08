@@ -2,9 +2,9 @@ import {useCallback, useEffect, useState} from 'react';
 import {ArrowRight, Menu, Moon, Sun, X, Zap} from 'lucide-react';
 
 const NAV_LINKS: NavLink[] = [
-  { label: "Features", href: "#features" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Use Cases", href: "#use-cases" },
+  { label: "Features", href: "/features" },
+  { label: "How It Works", href: "/how-it-works" },
+  // { label: "Use Cases", href: "#use-cases" },
   { label: "Documentation", href: "/docs" },
 ];
 
@@ -61,7 +61,7 @@ function Navbar({ theme, onToggleTheme }: NavbarProps) {
         className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8"
       >
         {/* Brand */}
-        <a href="#top" className="flex items-center gap-2.5 rounded-lg">
+        <a href="/" className="flex items-center gap-2.5 rounded-lg">
           <FluxGridMark />
           <span className="flex flex-col leading-none">
             <span className="text-base font-bold tracking-tight text-slate-900 dark:text-slate-100">

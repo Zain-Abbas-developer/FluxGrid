@@ -2,8 +2,8 @@ import { useCallback, useEffect, useState } from "react";
 import type { ReactElement } from "react";
 
 import {useTheme} from '../../context/ThemeContext.tsx';
-import Navbar from '../../components/common/Navbar.tsx'
-import Footer from '../../components/common/Footer.tsx'
+// import Navbar from '../../components/common/Navbar.tsx'
+// import Footer from '../../components/common/Footer.tsx'
 import Hero from '../../components/landing/Hero.tsx'
 import Features from '../../components/landing/Features.tsx'
 import HowItWorks from '../../components/landing/HowItWork.tsx'
@@ -23,7 +23,7 @@ export default function LandingPage(): ReactElement {
       >
         Skip to content
       </a>
-      <Navbar theme={theme} onToggleTheme={toggleTheme} />
+      {/* <Navbar theme={theme} onToggleTheme={toggleTheme} /> */}
 
       <main id="main-content">
         <Hero />
@@ -34,7 +34,7 @@ export default function LandingPage(): ReactElement {
         <FinalCTA />
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

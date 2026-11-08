@@ -1,10 +1,12 @@
 import React from 'react'
-import LandingPage from './pages/Dashboard/CommonLayout'
+import { RouterProvider } from 'react-router-dom'
+import router from './Router'
+
 const App = () => {
   return (
-    <div> 
-      <LandingPage />
-    </div>
+    <> 
+     <RouterProvider router={router} />
+    </>
   )
 }
 

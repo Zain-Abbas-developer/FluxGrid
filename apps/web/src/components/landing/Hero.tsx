@@ -1,4 +1,5 @@
 // import React, from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Check, Code2, Layers, Cpu, ArrowDown, Database, CheckCircle2, } from 'lucide-react';
 import {PRIMARY_BUTTON, SECONDARY_BUTTON, TECH_LABELS, TONES} from './index.ts'
 
