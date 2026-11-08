@@ -1,5 +1,5 @@
 import React from 'react'
-import LandingPage from './pages/Auth/EmailVerificationPending'
+import LandingPage from './pages/Dashboard/CommonLayout'
 const App = () => {
   return (
     <div> 
