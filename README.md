@@ -95,8 +95,8 @@ flowchart LR
     Queues --> Redis[("Redis")]
     Redis --> Email["Email worker"]
     Redis --> Compute["Compute worker"]
-    Redis --> Report["Report worker"]
-    Redis --> Data["Data worker"]
+    Redis --> Report["Report worker path"]
+    Redis --> Data["Data worker path"]
     Compute --> DLQ["Dead-letter queue"]
     Compute --> Python["FastAPI compute service"]
     Email --> Mongo
@@ -112,7 +112,7 @@ flowchart LR
 | Express API | Accepts job submissions, persists job records, and dispatches jobs to BullMQ queues. |
 | MongoDB | Stores job records and execution metadata. |
 | Redis | Provides the BullMQ transport and queue state. |
-| Node workers | Consume queue messages and run workload processors with bounded concurrency. |
+| Node workers | Consume active queue messages and provide processor paths for the supported workloads with bounded concurrency. |
 | FastAPI compute service | Provides the Python compute boundary used by the compute workload. |
 | Dead-letter queue | Retains exhausted compute jobs with error context and attempt information. |
 
