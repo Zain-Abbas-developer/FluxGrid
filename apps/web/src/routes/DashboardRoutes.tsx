@@ -13,6 +13,9 @@ import Queues from "../pages/Queues/Queue";
 //import queueDetails from "../pages/Queues/QueueDetails";
 import WorkersOverview from "../pages/Queues/WorkersOverview";
 import WorkerDetails from "../pages/Queues/WorkerDetails";
+import Analytics from "../pages/Analytics/Analytics";
+import SystemHealth from "../pages/Analytics/SystemHealth";
+import Reports from "../pages/Analytics/Reports";
 
 const DashboardRoutes = {
   path: "/app",
@@ -33,8 +36,9 @@ const DashboardRoutes = {
     // { path: "queues/:queueId", element: <QueueDetails/> },
     { path: "workers", element: <WorkersOverview/> },
     { path: "workers/:workerId", element: <WorkerDetails/> },
-    { path: "analytics", element: <div>Analytics</div> },
-    { path: "reports", element: <div>Reports</div> },
+    { path: "analytics", element: <Analytics/> },
+    {path: "system-health", element: <SystemHealth/>},
+    { path: "reports", element: <Reports/> },
     { path: "api-playground", element: <div>API Playground</div> },
     { path: "api-keys", element: <div>API Keys</div> },
     { path: "logs-events", element: <div>Logs</div> },

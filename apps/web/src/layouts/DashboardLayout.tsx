@@ -180,7 +180,7 @@ const DashboardLayout = (): React.ReactElement => {
                 const isLast = index === breadcrumbs.length - 1;
 
                 return (
-                  <React.Fragment key={breadcrumb.path}>
+                  <React.Fragment key={breadcrumb.id}>
                     {index > 0 && (
                       <ChevronRight
                         aria-hidden="true"

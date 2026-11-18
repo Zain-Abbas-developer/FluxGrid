@@ -17,6 +17,7 @@ import {
   Bell,
   User,
   Sliders,
+  HeartPulse,
 } from "lucide-react";
 
 interface SidebarProps {
@@ -54,7 +55,12 @@ const Sidebar = ({ role }: SidebarProps): React.ReactElement => {
           name: "Create Job",
           icon: PlusCircle,
           path: "/app/jobs/create",
-        },
+        }
+      ],
+    },
+    {
+      title: "MONITORING",
+      items: [
         {
           name: "Queues",
           icon: ListOrdered,
@@ -70,9 +76,18 @@ const Sidebar = ({ role }: SidebarProps): React.ReactElement => {
           icon: BarChart3,
           path: "/app/analytics",
         },
-      ],
+        {
+          name: "System Health",
+          icon: HeartPulse,
+          path: "/app/system-health",
+        },
+        {
+          name: "Reports",
+          icon: FileText,
+          path: "/app/reports",
+        }
+      ]
     },
-
     {
       title: "DEVELOPER TOOLS",
       items: [
@@ -164,6 +179,7 @@ const Sidebar = ({ role }: SidebarProps): React.ReactElement => {
   const allowedGroups: Record<string, string[]> = {
     SUPER_ADMIN: [
       "WORKSPACE",
+      "MONITORING",
       "DEVELOPER TOOLS",
       "ORGANIZATION",
       "ACCOUNT",
