@@ -110,7 +110,7 @@ const Sidebar = ({ role }: SidebarProps): React.ReactElement => {
         {
           name: "Usage & Quotas",
           icon: PieChart,
-          path: "/app/usage&quotas",
+          path: "/app/usage-quotas",
         },
         {
           name: "Settings",
