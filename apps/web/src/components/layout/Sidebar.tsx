@@ -107,9 +107,9 @@ const Sidebar = ({ role }: SidebarProps): React.ReactElement => {
           path: "/app/logs-events",
         },
         {
-          name: "Documentation",
+          name: "Docs & SDK",
           icon: FileText,
-          path: "/app/documentation",
+          path: "/app/developerDocs",
         },
       ],
     },

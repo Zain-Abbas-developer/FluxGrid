@@ -16,6 +16,11 @@ import WorkerDetails from "../pages/Queues/WorkerDetails";
 import Analytics from "../pages/Analytics/Analytics";
 import SystemHealth from "../pages/Analytics/SystemHealth";
 import Reports from "../pages/Analytics/Reports";
+import UsageQuotas from "../pages/Analytics/UsageQuotes";
+import APIPlayground from "../pages/Developer/API-Playground";
+import ApiKeys from "../pages/Developer/API-Keys";
+import LogsEvents from "../pages/Developer/LogsEvents";
+import DeveloperDoc from "../pages/Developer/API-Documentation-SDKs";
 
 const DashboardRoutes = {
   path: "/app",
@@ -39,12 +44,12 @@ const DashboardRoutes = {
     { path: "analytics", element: <Analytics/> },
     {path: "system-health", element: <SystemHealth/>},
     { path: "reports", element: <Reports/> },
-    { path: "api-playground", element: <div>API Playground</div> },
-    { path: "api-keys", element: <div>API Keys</div> },
-    { path: "logs-events", element: <div>Logs</div> },
-    { path: "documentation", element: <div>Documentation</div> },
+    { path: "api-playground", element: <APIPlayground/> },
+    { path: "api-keys", element: <ApiKeys/> },
+    { path: "logs-events", element: <LogsEvents/> },
+    { path: "developerDocs", element: <DeveloperDoc/> },
     { path: "members", element: <div>Members</div> },
-    { path: "usage-quotas", element: <div>Usage & Quotas</div> },
+    { path: "usage-quotas", element: <UsageQuotas/> },
     { path: "settings", element: <div>settings</div> },
     { path: "notifications", element: <div>Notifications</div> },
     { path: "profile", element: <div>Profile</div> },
