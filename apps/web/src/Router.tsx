@@ -5,6 +5,7 @@ import AuthRoutes from "./routes/AuthRoutes";
 import DashboardRoutes from "./routes/DashboardRoutes";
 import AdminRoutes from "./routes/AdminRoutes";
 import GuestRoutes from './routes/GuestRoutes';
+import NotFound from "./pages/ErrorSystem/NotFound";
 
 const router = createBrowserRouter([
     PublicRoutes,
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
     GuestRoutes,
     {
         path: "*",
-        element: <div>404 Not Found</div>
+        element: <NotFound/>
     }
 ]);
 

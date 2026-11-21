@@ -21,6 +21,10 @@ import APIPlayground from "../pages/Developer/API-Playground";
 import ApiKeys from "../pages/Developer/API-Keys";
 import LogsEvents from "../pages/Developer/LogsEvents";
 import DeveloperDoc from "../pages/Developer/API-Documentation-SDKs";
+import MembersAndInvitations from "../pages/Admin/MembersInvitation";
+import Notifications from "../pages/Settings/account/Notifications";
+import Profile from "../pages/Settings/account/Profile";
+import Preferences from "../pages/Settings/security/Preferences";
 
 const DashboardRoutes = {
   path: "/app",
@@ -48,13 +52,13 @@ const DashboardRoutes = {
     { path: "api-keys", element: <ApiKeys/> },
     { path: "logs-events", element: <LogsEvents/> },
     { path: "developerDocs", element: <DeveloperDoc/> },
-    { path: "members", element: <div>Members</div> },
+    { path: "members", element: <MembersAndInvitations/> },
     { path: "usage-quotas", element: <UsageQuotas/> },
     { path: "settings", element: <div>settings</div> },
-    { path: "notifications", element: <div>Notifications</div> },
-    { path: "profile", element: <div>Profile</div> },
+    { path: "notifications", element: <Notifications/> },
+    { path: "profile", element: <Profile/> },
     { path: "security", element: <div>Security</div> },
-    { path: "preferences", element: <div>Preferences</div> },
+    { path: "preferences", element: <Preferences/> },
   ],
 };
 
