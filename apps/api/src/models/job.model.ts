@@ -1,57 +1,89 @@
-import mongoose, { Schema } from 'mongoose';
+import mongoose, { Document, Schema } from "mongoose";
 
-const jobSchema = new Schema({
+export type JobStatus =
+  | "queued"
+  | "running"
+  | "completed"
+  | "failed"
+  | "cancelled";
+
+export interface IJob extends Document {
+  organizationId: mongoose.Types.ObjectId;
+  createdBy: mongoose.Types.ObjectId;
+
+  name: string;
+  description?: string;
+
+  status: JobStatus;
+
+  priority: number;
+
+  retryCount: number;
+
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+const jobSchema = new Schema<IJob>(
+  {
     organizationId: {
-        type: String,
-        required: true,
-        index: true,
+      type: Schema.Types.ObjectId,
+      ref: "Organization",
+      required: true,
+      index: true,
     },
 
-    type: {
-        type: String,
-        required: true,
+    createdBy: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+
+    name: {
+      type: String,
+      required: true,
+      trim: true,
+      maxlength: 150,
+    },
+
+    description: {
+      type: String,
+      trim: true,
+      maxlength: 1000,
     },
 
     status: {
-        type: String,
-        enum: [
-            "pending",
-            "queued",
-            "processing",
-            "completed",
-            "failed",
-            "cancelled",
-        ],
-        default: "pending",
-        index: true,
+      type: String,
+      enum: [
+        "queued",
+        "running",
+        "completed",
+        "failed",
+        "cancelled",
+      ],
+      default: "queued",
+      index: true,
     },
 
-    payload: {
-        type: Schema.Types.Mixed,
-        required: true,
+    priority: {
+      type: Number,
+      default: 0,
+      min: 0,
+      max: 100,
     },
 
-    attempts: {
-        type: Number,
-        default: 0,
+    retryCount: {
+      type: Number,
+      default: 0,
+      min: 0,
     },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-    maxAttempts: {
-        type: Number,
-        default: 3,
-    },
+jobSchema.index({ organizationId: 1, status: 1 });
+jobSchema.index({ createdAt: -1 });
 
-    result: {
-        type: Schema.Types.Mixed,
-    },
-
-    error: {
-        type: String,
-    },
-
-    startedAt: Date,
-    completedAt: Date,
-
-}, { timestamps: true });
-
-export const Job = mongoose.model('Job', jobSchema);
+export const Job = mongoose.model<IJob>("Job", jobSchema);
