@@ -1,10 +1,13 @@
 import mongoose from "mongoose";
+import { env } from "./env.js";
 
-export async function connectDatabase() {
-  const uri =
-    process.env.MONGO_URI || "mongodb://localhost:27017/fluxgrid";
+export const connectDatabase = async (): Promise<void> => {
+  try {
+    await mongoose.connect(env.mongoUri);
 
-  await mongoose.connect(uri);
-
-  console.log("MongoDB connected");
-}
+    console.log("MongoDB connected successfully");
+  } catch (error) {
+    console.error("MongoDB connection failed:", error);
+    process.exit(1);
+  }
+};
