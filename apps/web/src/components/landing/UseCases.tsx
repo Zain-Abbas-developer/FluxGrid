@@ -1,5 +1,5 @@
 import {ArrowRight} from 'lucide-react'
-import {USE_CASES, CARD_BASE} from './index.ts'
+import {USE_CASES, CARD_BASE, type SectionHeadingProps} from './index.ts'
 
 function SectionHeading({ eyebrow, title, description }: SectionHeadingProps) {
   return (

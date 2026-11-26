@@ -1,9 +1,9 @@
-import express from "express";
+import express, { type Express } from "express";
 import cors from "cors";
 import helmet from "helmet";
 import { env } from "./config/env.js";
 
-const app = express();
+const app: Express = express();
 
 /*
  * Security

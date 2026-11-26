@@ -7,9 +7,7 @@ export const SECONDARY_BUTTON =
  export const CARD_BASE =
   "rounded-2xl border border-slate-300/70 bg-white shadow-sm transition-all duration-300 dark:border-slate-700 dark:bg-[#111827]";
 
-
 export const TECH_LABELS = ["REST API", "Redis", "BullMQ", "Node.js", "MongoDB"];   
-
 
 export const TONES = {
   blue: {
@@ -29,7 +27,35 @@ export const TONES = {
   },
 } as const;
 
-import {Layers, Cpu, RefreshCw, BarChart3, Send, ListOrdered, Database, Users, CalendarClock } from 'lucide-react';
+import {Layers, Cpu, RefreshCw, BarChart3, Send, ListOrdered, Database, Users, CalendarClock, type LucideIcon } from 'lucide-react';
+
+export interface SectionHeadingProps {
+  eyebrow: string;
+  title: string;
+  description?: string;
+}
+
+export interface FeatureData {
+  icon: LucideIcon;
+  category: string;
+  title: string;
+  description: string;
+  tone: keyof typeof TONES;
+}
+
+export interface StepData {
+  number: string;
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+export interface UseCaseData {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
 export const FEATURES: FeatureData[] = [
   {
     icon: Layers,
@@ -91,7 +117,6 @@ export const STEPS: StepData[] = [
     description: "Store results and monitor execution status through the API.",
   },
 ];
-
 
 export const USE_CASES: UseCaseData[] = [
   {

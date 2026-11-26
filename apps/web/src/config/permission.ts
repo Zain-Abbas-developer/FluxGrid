@@ -1,5 +1,4 @@
-
-import { ROLES, type UserRole } from "./roles";
+import { ROLES, type UserRole } from "./roles.js";
 
 export const PERMISSIONS = {
   DASHBOARD_READ: "dashboard:read",

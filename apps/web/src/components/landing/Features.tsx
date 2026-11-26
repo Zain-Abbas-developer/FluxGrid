@@ -1,11 +1,5 @@
-import {FEATURES, CARD_BASE, TONES} from './index.ts';
+import {FEATURES, CARD_BASE, TONES, type FeatureData, type SectionHeadingProps} from './index.ts';
 import {ArrowRight} from 'lucide-react';
-
-interface SectionHeadingProps {
-  eyebrow: string;
-  title: string;
-  description?: string;
-}
 
 function SectionHeading({ eyebrow, title, description }: SectionHeadingProps) {
   return (
@@ -24,7 +18,6 @@ function SectionHeading({ eyebrow, title, description }: SectionHeadingProps) {
     </div>
   );
 }
-
 
 function FeatureCard({
   icon: Icon,
