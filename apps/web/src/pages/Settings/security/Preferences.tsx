@@ -14,6 +14,32 @@ import {
   Moon,
 } from "lucide-react";
 
+type CheckboxProps = {
+  label: string;
+  checked: boolean;
+  onChange: () => void;
+};
+
+function Checkbox({ label, checked, onChange }: CheckboxProps) {
+  return (
+    <label
+      className="flex cursor-pointer items-center gap-3 group"
+      onClick={onChange}
+    >
+      <div className={`flex h-5 w-5 items-center justify-center rounded border transition-colors ${
+        checked
+          ? "border-blue-600 bg-blue-600 text-white dark:border-blue-500 dark:bg-blue-500"
+          : "border-slate-300 bg-white group-hover:border-blue-400 dark:border-slate-600 dark:bg-[#0f172a]"
+      }`}>
+        {checked && <Check size={14} strokeWidth={3} />}
+      </div>
+      <span className="text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white select-none">
+        {label}
+      </span>
+    </label>
+  );
+}
+
 export default function Preferences(): React.ReactElement {
   // Form State
   const [theme, setTheme] = useState<"Light" | "Dark" | "System">("System");
@@ -46,29 +72,11 @@ export default function Preferences(): React.ReactElement {
     }, 1000);
   };
 
-  // Reusable Checkbox Component
-  const Checkbox = ({ 
-    label, 
-    checked, 
-    onChange 
-  }: { 
-    label: string; 
-    checked: boolean; 
-    onChange: () => void 
-  }) => (
-    <label className="flex cursor-pointer items-center gap-3 group">
-      <div className={`flex h-5 w-5 items-center justify-center rounded border transition-colors ${
-        checked 
-          ? "border-blue-600 bg-blue-600 text-white dark:border-blue-500 dark:bg-blue-500" 
-          : "border-slate-300 bg-white group-hover:border-blue-400 dark:border-slate-600 dark:bg-[#0f172a]"
-      }`}>
-        {checked && <Check size={14} strokeWidth={3} />}
-      </div>
-      <span className="text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white select-none">
-        {label}
-      </span>
-    </label>
-  );
+  const themes = [
+    { name: "Light", icon: Sun },
+    { name: "Dark", icon: Moon },
+    { name: "System", icon: Monitor },
+  ] as const;
 
   return (
     <div className="mx-auto max-w-4xl space-y-6 p-4 sm:p-6 lg:p-8">
@@ -95,17 +103,13 @@ export default function Preferences(): React.ReactElement {
               Theme:
             </span>
             <div className="flex flex-wrap gap-2">
-              {[
-                { name: "Light", icon: Sun },
-                { name: "Dark", icon: Moon },
-                { name: "System", icon: Monitor },
-              ].map((t) => {
+              {themes.map((t) => {
                 const Icon = t.icon;
                 const isActive = theme === t.name;
                 return (
                   <button
                     key={t.name}
-                    onClick={() => setTheme(t.name as any)}
+                    onClick={() => setTheme(t.name)}
                     className={`flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-medium transition ${
                       isActive
                         ? "border-blue-200 bg-blue-50 text-blue-700 dark:border-blue-900/50 dark:bg-blue-500/10 dark:text-blue-400"

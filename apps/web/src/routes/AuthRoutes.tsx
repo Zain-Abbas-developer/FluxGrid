@@ -4,9 +4,9 @@ import AuthLayout from '../layouts/AuthLayout.tsx';
 import LoginPage from '../pages/Auth/Login.tsx';
 import RegisterPage from '../pages/Auth/Register.tsx';
 import ForgotPasswordPage from '../pages/Auth/ForgotPassword.tsx';
-import resetPasswordPage from '../pages/Auth/ResetPassword.tsx';
-import VerifyEmailPage from '../pages/Auth/EmailVerification.tsx';
-import mfaPage from '../pages/Auth/Multi-factor.tsx';
+import ResetPasswordPage from '../pages/Auth/ResetPassword.tsx';
+import VerifyEmailPage from '../pages/Auth/Emailverification.tsx';
+import MfaPage from '../pages/Auth/Multi-factor.tsx';
 
 
 const AuthRoutes = {
@@ -26,7 +26,7 @@ const AuthRoutes = {
         },
         {
             path: "/reset-password",
-            element: <resetPasswordPage />
+            element: <ResetPasswordPage />
         },
         {
             path: "/verify-email",
@@ -34,7 +34,7 @@ const AuthRoutes = {
         },
         {
             path: "/mfa",
-            element: <mfaPage />
+            element: <MfaPage />
         },
     ],
 };

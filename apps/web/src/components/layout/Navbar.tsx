@@ -4,10 +4,6 @@ import {
 } from "lucide-react";
 import { useTheme } from "../../context/ThemeContext.tsx";
 
-interface NavbarProps {
-  // Props can be added here if needed later
-}
-
 export default function Navbar(): React.ReactElement {
   const { theme, toggleTheme } = useTheme();
 

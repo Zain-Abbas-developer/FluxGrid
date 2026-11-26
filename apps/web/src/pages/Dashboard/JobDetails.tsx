@@ -8,12 +8,11 @@ import {
   Server,
   Hash,
   Activity,
-  CheckCircle2,
 } from "lucide-react";
 
 export default function JobDetails(): React.ReactElement {
   // Mock job data based on the blueprint
-  const [job, setJob] = useState({
+  const [job] = useState({
     id: "job_abc123",
     status: "Processing", // Processing, Completed, Failed, Queued
     type: "report",

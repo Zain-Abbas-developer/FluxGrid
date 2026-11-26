@@ -6,8 +6,6 @@ import {
   CheckCircle2,
   RefreshCw,
   FileText,
-  ArrowRight,
-  Play,
 } from "lucide-react";
 
 // Mock data based on the blueprint

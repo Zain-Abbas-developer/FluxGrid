@@ -5,8 +5,6 @@ import {
   Info,
   AlertTriangle,
   XCircle,
-  Terminal,
-  Activity,
   Link2,
   Briefcase,
   Server,

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   CreditCard,
   CheckCircle2,
@@ -74,8 +74,6 @@ const billingHistory = [
 ];
 
 export default function BillingAndPlans(): React.ReactElement {
-  const [hoveredPlan, setHoveredPlan] = useState<string | null>(null);
-
   // Calculate usage percentage
   const usagePercentage = Math.min(
     (currentPlan.usageUsed / currentPlan.usageLimit) * 100,
@@ -162,8 +160,6 @@ export default function BillingAndPlans(): React.ReactElement {
             return (
               <div
                 key={plan.name}
-                onMouseEnter={() => setHoveredPlan(plan.name)}
-                onMouseLeave={() => setHoveredPlan(null)}
                 className={`relative flex flex-col rounded-xl border p-6 shadow-sm transition-all duration-200 ${
                   isCurrent
                     ? "border-blue-500 bg-white dark:border-blue-500 dark:bg-[#111827]"

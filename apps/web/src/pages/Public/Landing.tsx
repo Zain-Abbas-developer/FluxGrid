@@ -1,7 +1,5 @@
-import { useCallback, useEffect, useState } from "react";
 import type { ReactElement } from "react";
 
-import {useTheme} from '../../context/ThemeContext.tsx';
 // import Navbar from '../../components/common/Navbar.tsx'
 // import Footer from '../../components/common/Footer.tsx'
 import Hero from '../../components/landing/Hero.tsx'
@@ -13,8 +11,6 @@ import FinalCTA from '../../components/landing/FinalCTA.tsx'
 
 
 export default function LandingPage(): ReactElement {
-  const { theme, toggleTheme } = useTheme();
-
   return (
     <div className="relative min-h-screen scroll-smooth overflow-x-clip bg-[#E2EBF0] text-slate-900 antialiased selection:bg-blue-500/20 dark:bg-[#0B1220] dark:text-slate-100">
       <a
@@ -23,7 +19,6 @@ export default function LandingPage(): ReactElement {
       >
         Skip to content
       </a>
-      {/* <Navbar theme={theme} onToggleTheme={toggleTheme} /> */}
 
       <main id="main-content">
         <Hero />

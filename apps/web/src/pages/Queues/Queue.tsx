@@ -39,7 +39,7 @@ const initialQueues = [
 ];
 
 export default function Queues(): React.ReactElement {
-  const [queues, setQueues] = useState(initialQueues);
+  const [queues] = useState(initialQueues);
   const [searchQuery, setSearchQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState("All");
   const [isRefreshing, setIsRefreshing] = useState(false);

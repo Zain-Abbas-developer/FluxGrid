@@ -31,7 +31,7 @@ export default function CreateJob(): React.ReactElement {
       setJsonError(null);
       setJsonSuccess(true);
       setTimeout(() => setJsonSuccess(false), 3000);
-    } catch (err: any) {
+    } catch {
       setJsonSuccess(false);
       setJsonError("Invalid JSON format. Please check your syntax.");
     }
@@ -44,7 +44,7 @@ export default function CreateJob(): React.ReactElement {
       setJsonError(null);
       setJsonSuccess(true);
       setTimeout(() => setJsonSuccess(false), 3000);
-    } catch (err: any) {
+    } catch {
       setJsonSuccess(false);
       setJsonError("Cannot format invalid JSON.");
     }

@@ -3,10 +3,8 @@ import {
   UserPlus,
   X,
   ChevronDown,
-  MoreHorizontal,
   Mail,
   Shield,
-  Check,
   Loader2,
   Users,
 } from "lucide-react";
