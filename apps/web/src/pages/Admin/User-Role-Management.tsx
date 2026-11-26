@@ -4,10 +4,7 @@ import {
   ChevronDown,
   UserCog,
   ShieldCheck,
-  ShieldAlert,
   User,
-  Settings,
-  MoreHorizontal,
 } from "lucide-react";
 
 // Types

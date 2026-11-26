@@ -48,7 +48,7 @@ const initialOrganizations: Organization[] = [
 ];
 
 export default function Organizations(): React.ReactElement {
-  const [organizations, setOrganizations] = useState(initialOrganizations);
+  const [organizations] = useState(initialOrganizations);
   
   // Filter State
   const [searchQuery, setSearchQuery] = useState("");

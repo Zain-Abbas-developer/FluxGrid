@@ -44,7 +44,7 @@ const lastChecks = [
 ];
 
 export default function SystemHealth(): React.ReactElement {
-  const [services, setServices] = useState(initialServices);
+  const [services] = useState(initialServices);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [lastUpdated, setLastUpdated] = useState(new Date().toLocaleTimeString());
   

@@ -1,7 +1,13 @@
 // import React, from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Check, Code2, Layers, Cpu, ArrowDown, Database, CheckCircle2, } from 'lucide-react';
+import { ArrowRight, Check, Code2, Layers, Cpu, ArrowDown, Database, CheckCircle2, type LucideIcon } from 'lucide-react';
 import {PRIMARY_BUTTON, SECONDARY_BUTTON, TECH_LABELS, TONES} from './index.ts'
+
+type ArchNodeData = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  tone: keyof typeof TONES;
+};
 
 const ARCHITECTURE_NODES: ArchNodeData[] = [
   { icon: Code2, title: "API", description: "Job Submission", tone: "blue" },

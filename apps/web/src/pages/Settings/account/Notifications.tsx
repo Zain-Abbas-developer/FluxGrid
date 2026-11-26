@@ -8,7 +8,6 @@ import {
   ChevronLeft,
   Shield,
   Server,
-  Briefcase,
 } from "lucide-react";
 
 // Types

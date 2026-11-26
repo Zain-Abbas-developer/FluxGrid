@@ -7,7 +7,6 @@ import {
   User,
   Shield,
   HelpCircle,
-  ExternalLink,
   Eye,
   CheckCircle2,
   Activity,

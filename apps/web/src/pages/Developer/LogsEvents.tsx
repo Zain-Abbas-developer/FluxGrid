@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Search,
   Play,
@@ -13,7 +13,6 @@ import {
   Briefcase,
   Server,
   FileWarning,
-  CheckCircle2,
   Bug,
 } from "lucide-react";
 
@@ -85,7 +84,7 @@ export default function LogsEvents(): React.ReactElement {
 
   // Simulate Live Tail
   useEffect(() => {
-    let interval: NodeJS.Timeout;
+    let interval: ReturnType<typeof setInterval> | undefined;
     if (isLiveTail) {
       interval = setInterval(() => {
         const services: ServiceType[] = ["API", "Worker", "Queue", "Database"];
@@ -107,7 +106,9 @@ export default function LogsEvents(): React.ReactElement {
         setLogs((prev) => [newLog, ...prev].slice(0, 50)); // Keep last 50 to prevent memory leaks
       }, 3000);
     }
-    return () => clearInterval(interval);
+    return () => {
+      if (interval) clearInterval(interval);
+    };
   }, [isLiveTail]);
 
   // Filter Logic

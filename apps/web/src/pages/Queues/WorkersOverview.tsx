@@ -38,7 +38,7 @@ const initialWorkers = [
 ];
 
 export default function WorkersOverview(): React.ReactElement {
-  const [workers, setWorkers] = useState(initialWorkers);
+  const [workers] = useState(initialWorkers);
   const [searchQuery, setSearchQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState("All");
   const [queueFilter, setQueueFilter] = useState("All");

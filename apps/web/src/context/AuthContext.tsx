@@ -2,6 +2,7 @@
 import {
   createContext,
   useContext,
+  useCallback,
   useEffect,
   useMemo,
   useState,
@@ -42,7 +43,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [user, setUser] = useState<AuthUser | null>({
     id: "user-001",
     name: "Zain Abbas",
-    emaiil: "zain@example.com",
+    email: "zain@example.com",
     role: "SUPER_ADMIN",
     organizationId: "org-001",
   });
@@ -66,14 +67,14 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     initializeAuth();
   }, []);
 
-  const hasPermission = (permission: Permission) => {
+  const hasPermission = useCallback((permission: Permission) => {
     if (!user) return false;
 
     const userPermissions =
       user.permissions ?? ROLE_PERMISSIONS[user.role];
 
     return userPermissions.includes(permission);
-  };
+  }, [user]);
 
   const value = useMemo(
     () => ({
@@ -82,7 +83,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       hasPermission,
       setUser,
     }),
-    [user, loading]
+    [user, loading, hasPermission]
   );
 
   return (
